@@ -1,0 +1,11 @@
+﻿@model MinecraftServerManager.Data.MojangAuthInfo
+<ul class="navbar-nav">
+    @if (Model != null)
+    {
+        <li class="navbar-item">@Model.SelectedProfile.Name</li>
+    }
+    else
+    {
+        <li class="navbar-item"><a asp-controller="Authentication" asp-action="LogOn">Sign in</a></li>
+    }
+</ul>
