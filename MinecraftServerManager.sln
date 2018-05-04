@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinecraftServerManager", "MinecraftServerManager.csproj", "{30E41AA0-CC28-402C-B690-9F472C9DEF3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinecraftServerManager", "MSM.Web\MinecraftServerManager.csproj", "{B959960E-4427-48D6-AFFA-6236FC351090}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSM.Core", "MSM.Core\MSM.Core.csproj", "{14AF5EEE-36D2-45C5-BAF8-37C941D8799E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{30E41AA0-CC28-402C-B690-9F472C9DEF3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{30E41AA0-CC28-402C-B690-9F472C9DEF3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{30E41AA0-CC28-402C-B690-9F472C9DEF3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{30E41AA0-CC28-402C-B690-9F472C9DEF3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B959960E-4427-48D6-AFFA-6236FC351090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B959960E-4427-48D6-AFFA-6236FC351090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B959960E-4427-48D6-AFFA-6236FC351090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B959960E-4427-48D6-AFFA-6236FC351090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14AF5EEE-36D2-45C5-BAF8-37C941D8799E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14AF5EEE-36D2-45C5-BAF8-37C941D8799E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14AF5EEE-36D2-45C5-BAF8-37C941D8799E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14AF5EEE-36D2-45C5-BAF8-37C941D8799E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

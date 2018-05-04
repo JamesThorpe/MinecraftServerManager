@@ -1,0 +1,22 @@
+﻿@using MSM.Web.Models.Authentication
+@model MSM.Web.Models.Authentication.Credentials
+
+<div class="card w-50 mx-auto">
+    <div class="card-body">
+        <h5 class="card-title">Log On</h5>
+        <h6 class="card-subtitle text-muted mb-2">Please enter your Mojang credentials to authenticate with the Server Manager</h6>
+        @using (Html.BeginForm()) {
+            <div class="form-group">
+                @Html.LabelFor(m => m.Username)
+                @Html.TextBoxFor(m => m.Username, new {@class = "form-control", placeholder = "Enter Mojang username/email..."})
+                @Html.ValidationMessageFor(m => m.Username,"", new {@class="text-danger"})
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new {@class = "form-control", placeholder = "Password"})
+                @Html.ValidationMessageFor(m => m.Password, "", new {@class="text-danger"})
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Log On</button>
+        }
+    </div>
+</div>
