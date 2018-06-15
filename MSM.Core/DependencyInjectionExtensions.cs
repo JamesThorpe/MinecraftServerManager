@@ -4,6 +4,7 @@ using System.Text;
 using LiteDB;
 using MSM.Core.Authentication;
 using MSM.Core.Config;
+using MSM.Core.GameData;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection
@@ -20,7 +21,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddSingleton<LiteDatabase>(new LiteDatabase("msm.db"));
-
+            services.AddTransient<IMetadataProvider, MetadataProvider>();
             return services;
         }
     }

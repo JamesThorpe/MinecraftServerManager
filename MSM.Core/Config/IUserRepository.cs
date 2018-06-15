@@ -10,5 +10,6 @@ namespace MSM.Core.Config
         User RetrieveUser(string Id);
         int CountUsers();
         void AddUser(User user);
+        IEnumerable<User> RetrieveUsers();
     }
 }

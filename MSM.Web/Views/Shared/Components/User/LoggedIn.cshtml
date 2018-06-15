@@ -1,5 +1,15 @@
 ﻿@model MSM.Core.User
 <ul class="navbar-nav">
+    
+    @if (Model.IsServerAdmin) {
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">Admin</a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" asp-controller="Admin" asp-action="Users">Users</a>
+            </div>
+        </li>
+    }
+
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">@Model.Name</a>
         <div class="dropdown-menu dropdown-menu-right">

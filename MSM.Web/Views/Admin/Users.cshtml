@@ -1,0 +1,29 @@
+﻿@using MSM.Core
+@model IEnumerable<MSM.Core.User>
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Admin</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var user in Model) {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>
+                    @if (@user.IsServerAdmin) {
+                        <i class="fa fa-check"></i>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    
+    <a class="button" asp-controller="Admin" asp-action="FindUser">Find User</a>
+</div>

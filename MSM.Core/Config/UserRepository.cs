@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using LiteDB;
 
 namespace MSM.Core.Config {
@@ -31,6 +32,12 @@ namespace MSM.Core.Config {
         {
             var users = GetUsers();
             users.Insert(user.Id, user);
+        }
+
+        public IEnumerable<User> RetrieveUsers()
+        {
+            var users = GetUsers();
+            return users.FindAll();
         }
     }
 }

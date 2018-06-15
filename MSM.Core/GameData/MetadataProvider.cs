@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace MSM.Core.GameData
 {
-    public class MetadataProvider
+    public class MetadataProvider : IMetadataProvider
     {
         private static string ManifestPath => Path.Combine(Common.BaseDirectory, "metadata", "version_manifest.json");
 
@@ -35,6 +36,19 @@ namespace MSM.Core.GameData
             using (var output = new FileStream(ManifestPath, FileMode.Create)) {
                 var responseStream = await response.Content.ReadAsStreamAsync();
                 await responseStream.CopyToAsync(output);
+            }
+        }
+
+        public async Task<MojangUserData> FindMojangUser(string username)
+        {
+            using (var client = new HttpClient())
+            using (var response = await client.GetAsync($"https://api.mojang.com/users/profiles/minecraft/{username}")) {
+                if (response.StatusCode == HttpStatusCode.OK) {
+                    var data = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<MojangUserData>(data);
+                } else {
+                    return null;
+                }
             }
         }
     }

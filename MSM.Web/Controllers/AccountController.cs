@@ -56,7 +56,8 @@ namespace MSM.Web.Controllers {
 
                 var claims = new List<Claim> {
                     new Claim(ClaimTypes.Name, u.Name, ClaimValueTypes.String, issuer),
-                    new Claim("MojangId", u.Id, ClaimValueTypes.String, issuer)
+                    new Claim("MojangId", u.Id, ClaimValueTypes.String, issuer),
+                    new Claim(ClaimTypes.Role, u.IsServerAdmin ? "admin" : "user")
                 };
 
                 var identity = new ClaimsIdentity(claims, "MsmUser");

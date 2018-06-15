@@ -19,11 +19,5 @@ namespace MSM.Web.Controllers
         {
             return View();
         }
-
-        [Authorize]
-        public async Task<IActionResult> Test()
-        {
-            return View("Index");
-        }
     }
 }
