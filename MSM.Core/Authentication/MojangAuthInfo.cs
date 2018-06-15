@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace MSM.Data
+namespace MSM.Core.Authentication
 {
     public class MojangAuthInfo
     {
-        public static string SessionKey = "AuthenticationInfo";
-
         public string AccessToken { get; set; }
         public string ClientToken { get; set; }
         public Profile SelectedProfile { get; set; }

@@ -1,6 +1,5 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
-using MSM.Data;
 using Newtonsoft.Json;
 
 namespace MSM.Core.Authentication {

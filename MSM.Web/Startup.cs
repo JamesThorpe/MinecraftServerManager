@@ -1,9 +1,14 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using System.Linq;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using MSM.Core;
 using MSM.Core.Authentication;
+using MSM.Core.Config;
 
 namespace MSM.Web
 {
@@ -17,7 +22,17 @@ namespace MSM.Web
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 
             services.AddMvc(options => options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()));
-            services.AddMinecraftServerManager(true);
+            services.AddMinecraftServerManager(false);
+
+
+            services.AddScoped(provider => {
+                var id = ClaimsPrincipal.Current?.Claims.FirstOrDefault(c => c.Type == "MojangId");
+                if (id == null)
+                    return null;
+
+                var repo = provider.GetService<IUserRepository>();
+                return repo.RetrieveUser(id.Value);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

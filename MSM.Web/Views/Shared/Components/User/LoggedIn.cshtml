@@ -1,7 +1,7 @@
-﻿@model System.Security.Principal.IPrincipal
+﻿@model MSM.Core.User
 <ul class="navbar-nav">
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">@Model.Identity.Name</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">@Model.Name</a>
         <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
         </div>

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using MSM.Data;
 
 namespace MSM.Core.Authentication
 {

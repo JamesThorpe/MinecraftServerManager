@@ -157,19 +157,19 @@ namespace MSM.Core.GameData
                                 if (int.TryParse(value, out var ival)) {
                                     property.SetValue(props, ival);
                                 } else {
-                                    //error parsing
+                                    throw new FileParseException($"Property {propName} should contain an integer");
                                 }
                             } else if (property.PropertyType == typeof(bool)) {
                                 if (bool.TryParse(value, out var bval)) {
                                     property.SetValue(props, bval);
                                 } else {
-                                    //error parsing
+                                    throw new FileParseException($"Property {propName} should contain a boolean");
                                 }
                             } else {
                                 property.SetValue(props, value);
                             }
                         } else {
-                            //unknown server property?
+                            throw new FileParseException($"Unknown server property {propName}");
                         }
 
                     }

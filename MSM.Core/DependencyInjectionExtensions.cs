@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using LiteDB;
 using MSM.Core.Authentication;
+using MSM.Core.Config;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection
@@ -15,6 +17,9 @@ namespace Microsoft.Extensions.DependencyInjection
             } else {
                 services.AddTransient<IMojangAuthenticator, TestAuthenticator>();
             }
+
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddSingleton<LiteDatabase>(new LiteDatabase("msm.db"));
 
             return services;
         }
