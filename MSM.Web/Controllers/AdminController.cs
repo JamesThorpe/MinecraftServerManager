@@ -49,5 +49,20 @@ namespace MSM.Web.Controllers {
             _userRepository.AddUser(u);
             return RedirectToAction("Users");
         }
+
+        [HttpGet]
+        [Route("[controller]/[action]/{userId}")]
+        public IActionResult EditUser(string userId)
+        {
+            return PartialView(_userRepository.RetrieveUser(userId));
+        }
+
+        [HttpPost]
+        [Route("[controller]/[action]/{userId}")]
+        public IActionResult EditUser(User user)
+        {
+            _userRepository.UpdateUser(user);
+            return RedirectToAction("Users");
+        }
     }
 }

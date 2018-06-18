@@ -9,5 +9,6 @@ namespace MSM.Core
         public string Id { get; set; }
         public string Name { get; set; }
         public bool IsServerAdmin { get; set; }
+        public int AllowedServers { get; set; }
     }
 }

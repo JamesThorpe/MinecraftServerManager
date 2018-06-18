@@ -39,5 +39,11 @@ namespace MSM.Core.Config {
             var users = GetUsers();
             return users.FindAll();
         }
+
+        public void UpdateUser(User user)
+        {
+            var users = GetUsers();
+            users.Update(user);
+        }
     }
 }

@@ -1,0 +1,11 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/js/msm.js",
+    "inputFiles": [
+      "SiteScripts/Fragments/pre.js",
+      "SiteScripts/Ajax/Dialogs.js",
+      "SiteScripts/Ajax/Forms.js",
+      "SiteScripts/Fragments/post.js"
+    ] 
+  }
+]

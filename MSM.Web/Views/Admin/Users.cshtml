@@ -8,6 +8,8 @@
             <th>Id</th>
             <th>Name</th>
             <th>Admin</th>
+            <th>Allowed Servers</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -19,6 +21,10 @@
                     @if (@user.IsServerAdmin) {
                         <i class="fa fa-check"></i>
                     }
+                </td>
+                <td>@user.AllowedServers</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-default" data-dialog="/Admin/EditUser/@user.Id"><i class="fa fa-pencil"></i></button>
                 </td>
             </tr>
         }
