@@ -17,7 +17,7 @@ namespace MSM.Core.Config {
             return users.FindById(Id);
         }
 
-        private LiteCollection<User> GetUsers()
+        private ILiteCollection<User> GetUsers()
         {
             return _database.GetCollection<User>("users");
         }
