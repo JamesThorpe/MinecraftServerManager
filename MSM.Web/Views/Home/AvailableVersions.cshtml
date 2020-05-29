@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MSM.Core.GameData.MinecraftVersion>
+
+@{
+    ViewBag.Title = "title";
+}
+
+@foreach (var v in @Model) {
+    <div>
+        @v.Id, @v.IsRelease, @v.Type, @v.Time, @v.ReleaseTime, @v.Url
+    </div>
+}
