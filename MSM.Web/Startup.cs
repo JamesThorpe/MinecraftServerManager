@@ -48,6 +48,7 @@ namespace MSM.Web
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(ep => {
                 ep.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });

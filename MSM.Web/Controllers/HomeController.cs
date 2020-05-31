@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MSM.Core;
 using MSM.Core.GameData;
 
 namespace MSM.Web.Controllers
@@ -20,6 +21,8 @@ namespace MSM.Web.Controllers
 
         public IActionResult Index()
         {
+            var s = new MinecraftServer();
+            s.StartServer();
             return View();
         }
 

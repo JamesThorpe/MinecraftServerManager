@@ -20,7 +20,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
 
             services.AddTransient<IUserRepository, UserRepository>();
-            services.AddSingleton<LiteDatabase>(new LiteDatabase("msm.db"));
+            services.AddSingleton<LiteDatabase>(new LiteDatabase("filename=msm.db;upgrade=true"));
             services.AddTransient<IMetadataProvider, MetadataProvider>();
             return services;
         }

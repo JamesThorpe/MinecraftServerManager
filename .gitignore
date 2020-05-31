@@ -290,3 +290,4 @@ __pycache__/
 /MSM.Web/wwwroot/js/msm.js
 /MSM.Web/wwwroot/js/msm.min.js
 /MSM.Web/msm-log.db
+/MSM.Web/msm-backup.db
